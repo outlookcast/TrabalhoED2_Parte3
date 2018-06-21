@@ -11,7 +11,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65ba18f0-3dc7-47f5-b510-4f298816ed18" name="Default" comment="" />
+    <list default="true" id="65ba18f0-3dc7-47f5-b510-4f298816ed18" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArvHuffman.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArvHuffman.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +41,7 @@
       <file leaf-file-name="No.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/No.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="391">
               <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
             </state>
           </provider>
@@ -47,7 +50,7 @@
       <file leaf-file-name="No.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/No.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="833">
               <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -56,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArvHuffman.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArvHuffman.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArvHuffman.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
+            <state relative-caret-position="1343">
+              <caret line="79" column="42" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="42" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -68,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArvHuffman.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ArvHuffman.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArvHuffman.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+            <state relative-caret-position="414">
+              <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
               <folding>
                 <element signature="e#80#95#0" expanded="true" />
               </folding>
@@ -92,6 +95,9 @@
       <find>auxRetornaCodigo</find>
       <find>retorna</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -113,7 +119,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1233" />
     <option name="y" value="21" />
     <option name="width" value="1087" />
@@ -140,6 +146,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunDashboard">
@@ -155,12 +162,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="TrabalhoED2_Parte3" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TrabalhoED2_Parte3" TARGET_NAME="TrabalhoED2_Parte3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="TrabalhoED2_Parte3" RUN_TARGET_NAME="TrabalhoED2_Parte3" />
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TrabalhoED2_Parte3" />
-      </list>
-    </recent_temporary>
+    <configuration name="TrabalhoED2_Parte3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TrabalhoED2_Parte3" TARGET_NAME="TrabalhoED2_Parte3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="TrabalhoED2_Parte3" RUN_TARGET_NAME="TrabalhoED2_Parte3" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -177,11 +179,12 @@
       <workItem from="1529171172233" duration="428000" />
       <workItem from="1529617149141" duration="1550000" />
       <workItem from="1529618838950" duration="3358000" />
+      <workItem from="1529622978633" duration="132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5963000" />
+    <option name="totallyTimeSpent" value="6095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
@@ -192,7 +195,7 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32731137" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32837406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32943678" />
@@ -214,6 +217,53 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArvHuffman.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+          <folding>
+            <element signature="e#80#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArvHuffman.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2516">
+          <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
@@ -272,7 +322,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/No.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="833">
           <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -282,7 +332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/No.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="391">
           <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
         </state>
       </provider>
@@ -297,22 +347,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArvHuffman.h">
+    <entry file="file://$PROJECT_DIR$/ArvHuffman.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="49" column="2" lean-forward="true" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+        <state relative-caret-position="1343">
+          <caret line="79" column="42" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="42" />
           <folding>
-            <element signature="e#80#95#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArvHuffman.cpp">
+    <entry file="file://$PROJECT_DIR$/ArvHuffman.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
+        <state relative-caret-position="414">
+          <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#80#95#0" expanded="true" />
           </folding>
         </state>
       </provider>
