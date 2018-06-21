@@ -106,8 +106,6 @@ void ArvHuffman::calculaFrequencia(string frase)
         }
 
     }
-    char vetorDeCaracteres[listaDeCaracteres.size()];
-    int vetorDeFrequencias[listaDeCaracteres.size()];
     vector<Caracter> vetorDeCaracter;
     for( list<Caracter>::iterator iter= listaDeCaracteres.begin(); iter != listaDeCaracteres.end(); iter++ )
     {
