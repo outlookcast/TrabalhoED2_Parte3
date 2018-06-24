@@ -6,31 +6,34 @@
 
 using  namespace std;
 
+//Usado como dicionário para poder comprimir a string original
 struct Codigo
 {
     string codigo;
     char caracter;
 };
 
+//Usado para gerar a lsita de frequencias
 struct Caracter
 {
     char caracter;
     int frequencia;
 };
 
+//Usado para poder comparar dois objetos usando uma propiedade dele
+struct comparador
+{
+    bool operator()(No* esq, No* dir)
+    {
+        return (esq->getFrequencia() > dir->getFrequencia());
+    }
+};
+
 class ArvHuffman
 {
-    class comparador
-    {
-    public:
-        bool operator()(No* esq, No* dir)
-        {
-            return (esq->getFrequencia() > dir->getFrequencia());
-        }
-    };
-
 private:
 
+    string stringOriginal;
     list<Codigo> listaDeCodigos;
     No * raiz;
     string stringComprimida;
@@ -48,6 +51,5 @@ public:
     string retornaStringComprimida(string frase);
     string descomprime();
 };
-
 
 #endif //TRABALHOED2_PARTE3_ARVHUFFMAN_H
