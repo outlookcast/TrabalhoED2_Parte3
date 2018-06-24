@@ -15,7 +15,7 @@ ArvHuffman::~ArvHuffman()
     this->desaloca(this->raiz);
 }
 
-//Desaloca da memoria a árvore de huffman
+//desaloca memoria da arvore
 void ArvHuffman::desaloca(No * no)
 {
     if(no!= NULL)
@@ -31,13 +31,13 @@ void ArvHuffman::desaloca(No * no)
 void ArvHuffman::montaArvore(vector<Caracter> vetorDeCaracter)
 {
     //Cria heap auxiliar para posicionar os valores
-    priority_queue<No*, vector<No*>, comparador> heap;
+    priority_queue<No, vector<No*>,comparador> heap;
 
     //Armazena os valores
     for (int i = 0; i < vetorDeCaracter.size(); ++i)
         heap.push(new No(vetorDeCaracter[i].caracter, vetorDeCaracter[i].frequencia));
 
-    //Retira os valores para montar a arvore de huffman
+    //Vai remontando a heap, até restar somente uma árvore dentro da heap
     while (heap.size() != 1)
     {
         //Pega o menor elemento atual
@@ -48,11 +48,13 @@ void ArvHuffman::montaArvore(vector<Caracter> vetorDeCaracter)
         No * dir  = heap.top();
         heap.pop();
 
-        //Cria um nó sem caracter (insere 0, que na tabela ASCII é NULL)para servir como raiz pros dois atuais existentes
+        /*Cria um nó sem caracter (insere 0, que na tabela ASCII é NULL)para servir como raiz pros dois atuais existentes
+         * Seta os filhos e depois insere novamente na heap, até restar somente uma arvore dentro da heap
+        */
+
         No * raizAux = new No(0, esq->getFrequencia() + dir->getFrequencia());
         raizAux->setEsq(esq);
         raizAux->setDir(dir);
-
         heap.push(raizAux);
     }
     //Guarda o valor da raiz na nova Heap
@@ -118,6 +120,7 @@ void ArvHuffman::calculaFrequencia(string frase)
 //retorna string comprimida (de 1's e 0's)
 string ArvHuffman::retornaStringComprimida(string frase)
 {
+    this->stringOriginal = frase;
     this->calculaFrequencia(frase);
     string stringComprimida = "";
     //Navega na string original
