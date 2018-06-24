@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "LZW.h"
+#include "LZ78.h"
 
 using namespace std;
 
@@ -19,28 +19,48 @@ int main()
    cout<<"Compressao: "<<resultadoCompressao<<endl;
    cout<<"Descompressao: "<<resultadoDescompressao<<endl;
    delete arv;
-    */
+   */
 
     /*************
      * TESTE LZW *
      *************/
+    /*
+  auto *arv = new LZW();//constroi a classe com os algoritmo;
 
-    auto *arv = new LZW();//constroi a classe com os algoritmo;
+  std::vector<int> comprimido;//vetor de inteiros para dados comprimidos
 
-    std::vector<int> comprimido;//vetor de inteiros para dados comprimidos
+  std::string dado;
+  //dado = "SEROUNAOSERSEROUNAOSER"; //EXEMPLO 1
+  dado = "banaca bacana"; //EXEMPLO 2
 
-    std::string dado;
-    //dado = "TOBEORNOTTOBEORTOBEORNOT"; //EXEMPLO 1
-    dado = "banaca bacana"; //EXEMPLO 2
+  cout << "String a ser comprimida|descomprimida: " << dado << endl;
+  comprimido = arv->compressao(dado, comprimido);//chama o algoritmo de compressao
+  cout << "Codigo de compressao: ";
+  copy(comprimido.begin(), comprimido.end(), std::ostream_iterator<int>(std::cout, ", "));//imprime a compressao
+  std::cout << std::endl;
+
+  cout << "Descompressao: ";
+  std::string decomprimido = arv->descompressao(comprimido.begin(), comprimido.end());//chama o algoritmo de descompressao
+  std::cout << decomprimido << std::endl;//imprime string
+  */
+
+    /**************
+    * TESTE LZ-78 *
+    ***************/
+
+    auto *arv = new LZ78();
+    std::string dado, resultado;
+    dado = "SEROUNAOSERSEROUNAOSER"; //EXEMPLO 1
+    //dado = "banaca bacana"; //EXEMPLO 2
 
     cout << "String a ser comprimida|descomprimida: " << dado << endl;
-    comprimido = arv->compressao(dado, comprimido);//chama o algoritmo de compressao
+    resultado = arv->compressao(dado);//chama o algoritmo de compressao
     cout << "Codigo de compressao: ";
-    copy(comprimido.begin(), comprimido.end(), std::ostream_iterator<int>(std::cout, ", "));//imprime a compressao
+    cout << resultado;//imprime a compressao
     std::cout << std::endl;
 
     cout << "Descompressao: ";
-    std::string decomprimido = arv->descompressao(comprimido.begin(), comprimido.end());//chama o algoritmo de descompressao
+    std::string decomprimido = arv->descompressao(resultado);//chama o algoritmo de descompressao
     std::cout << decomprimido << std::endl;//imprime string
 
     return 0;

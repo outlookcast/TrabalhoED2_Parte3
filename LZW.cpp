@@ -5,8 +5,8 @@ LZW::LZW() = default;
 LZW::~LZW() = default;
 
 // Comprime uma string para uma lista de simbolos de saida.
-// O resultadoado sera escrito no iterador de retorn
-// Comecando em "resultadoado"; o ultimo iterador eh retornado.
+// O resultado sera escrito no vector de retorno
+// Comecando em "resultado"; o ultimo iterador eh retornado.
 std::vector<int> LZW::compressao(const std::string &naoComprimido, std::vector<int> resultado)
 {
     // Monta o dicionario
