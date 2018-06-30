@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="65ba18f0-3dc7-47f5-b510-4f298816ed18" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LZ78.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LZ78.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+            <state relative-caret-position="101">
+              <caret line="55" column="70" lean-forward="true" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -204,7 +202,7 @@
       <workItem from="1529622978633" duration="132000" />
       <workItem from="1529814455229" duration="14770000" />
       <workItem from="1530324071258" duration="2992000" />
-      <workItem from="1530331463617" duration="422000" />
+      <workItem from="1530331463617" duration="2138000" />
     </task>
     <task id="LOCAL-00001" summary="algoritmo LZW funcionando">
       <created>1529868792284</created>
@@ -220,11 +218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529881430888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="algoritmo LZ-78 funcionando com exemplo e comentado;&#10;algoritmo LZW funcionando com exemplo e comentado;&#10;exemplo no main de como transforma a saida do algoritmo de compressao LZW em uma variavel string;">
+      <created>1530332004990</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530332004990</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24279000" />
+    <option name="totallyTimeSpent" value="25995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="6" />
@@ -234,9 +239,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.3284553" />
       <window_info anchor="bottom" id="CMake" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5003723" side_tool="true" visible="true" weight="0.3284553" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.0" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3284553" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996277" visible="true" weight="0.3284553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32943678" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -283,11 +288,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="algoritmo LZW funcionando" />
     <MESSAGE value="algoritmo LZ-78 funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="algoritmo LZ-78 funcionando" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="algoritmo LZ-78 funcionando com exemplo e comentado;&#10;algoritmo LZW funcionando com exemplo e comentado;&#10;exemplo no main de como transforma a saida do algoritmo de compressao LZW em uma variavel string;" />
+    <option name="LAST_COMMIT_MESSAGE" value="algoritmo LZ-78 funcionando com exemplo e comentado;&#10;algoritmo LZW funcionando com exemplo e comentado;&#10;exemplo no main de como transforma a saida do algoritmo de compressao LZW em uma variavel string;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp">
@@ -542,8 +548,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+        <state relative-caret-position="101">
+          <caret line="55" column="70" lean-forward="true" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
