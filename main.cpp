@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 #include "LZ78.h"
 #include "LZ77.h"
-
-
+#include "string"
 using namespace std;
 
 int main()
@@ -72,20 +71,32 @@ int main()
 
     cout<<"String para compressao:"<<endl;
     string st = "BANANABACANA";
-    //  string st = "bananabanabofana";
-    //  string st = "aaaaaaaaaaaaaaaaaaaaaa";
+    //string st = "bananabanabofana";
+    //string st = "aaaaaaaaaaaaaaaaaaaaaa";
     cout<<st<<endl;
     cout<<"Codigo compressao:"<<endl;
-    auto *lz = new LZ77();
 
-    string saida = "";
+    auto *lz = new LZ77();
     list<Tripla> lista;
     lista = lz->codifica(st);
+
+    //CRIADA A LISTA INICIO DO CÓDIGO QUE TRANSFORMA UMA LISTA DE TRIPLAS EM STRING "strString"
+
+    string strSaida = "";
     for (std::list<Tripla>::iterator it = lista.begin() ; it != lista.end(); ++it)
     {
-        cout<<"<"<<it->jump<<","<<it->size<<","<<it->c<<">";
+        strSaida+='<';
+        strSaida+=to_string(it->jump);
+        strSaida+=',';
+        strSaida+=to_string(it->size);
+        strSaida+=',';
+        strSaida+=it->c;
+        strSaida+='>';
     }
-    cout<<saida;
+
+    //FIM DO CÓDIGO QUE CONCATENA AS TRIPLAS NA STRING "strSaida"
+
+    cout<<strSaida;
     delete lz;
     return 0;
 }

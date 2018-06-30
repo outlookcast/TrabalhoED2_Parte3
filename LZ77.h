@@ -15,6 +15,8 @@ struct Tripla
 
 class LZ77 {
 public:
+    LZ77();
+    ~LZ77();
     list<Tripla> codifica(string st);
 };
 

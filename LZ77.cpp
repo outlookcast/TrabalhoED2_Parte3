@@ -10,6 +10,9 @@ using namespace std;
 //A Tripla contem um dado para guardar o quanto para trás deve andar para achar o melhor caracter,
 //outro dado para guardar o quanto de carcteres vão ser comprimidos, e outro do próximo caracter.
 
+LZ77::LZ77() {}
+LZ77::~LZ77() {}
+
 list<Tripla> LZ77::codifica (string st)
 {
     list<Tripla> lista;
