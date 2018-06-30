@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\TrabalhoED2_Parte3.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\TrabalhoED2_Parte3.dir/objects.a @CMakeFiles\TrabalhoED2_Parte3.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\TrabalhoED2_Parte3.dir/objects.a -Wl,--no-whole-archive  -o TrabalhoED2_Parte3.exe -Wl,--out-implib,libTrabalhoED2_Parte3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TrabalhoED2_Parte3.dir\linklibs.rsp

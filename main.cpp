@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 #include "LZ78.h"
+#include "LZ77.h"
+
 
 using namespace std;
 
@@ -48,6 +50,7 @@ int main()
     * TESTE LZ-78 *
     ***************/
 
+    /*
     auto *arv = new LZ78();
     std::string dado, resultado;
     dado = "SEROUNAOSERSEROUNAOSER"; //EXEMPLO 1
@@ -62,6 +65,27 @@ int main()
     cout << "Descompressao: ";
     std::string decomprimido = arv->descompressao(resultado);//chama o algoritmo de descompressao
     std::cout << decomprimido << std::endl;//imprime string
+*/
+    /**************
+    * TESTE LZ-77 *
+    ***************/
 
+    cout<<"String para compressao:"<<endl;
+    string st = "BANANABACANA";
+    //  string st = "bananabanabofana";
+    //  string st = "aaaaaaaaaaaaaaaaaaaaaa";
+    cout<<st<<endl;
+    cout<<"Codigo compressao:"<<endl;
+    auto *lz = new LZ77();
+
+    string saida = "";
+    list<Tripla> lista;
+    lista = lz->codifica(st);
+    for (std::list<Tripla>::iterator it = lista.begin() ; it != lista.end(); ++it)
+    {
+        cout<<"<"<<it->jump<<","<<it->size<<","<<it->c<<">";
+    }
+    cout<<saida;
+    delete lz;
     return 0;
 }
