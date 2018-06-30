@@ -1,4 +1,5 @@
-#include <utility> #include <vector>
+#include <utility> 
+#include <vector>
 #include <sstream>
 #include "LZ78.h"
 
