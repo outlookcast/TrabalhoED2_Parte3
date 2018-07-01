@@ -1,0 +1,161 @@
+#include <iostream>
+#include <fstream>//manipulacao de arquivo
+#include <string>// std::string, std::stoi
+#include "question.h"
+#include "controlaArquivo.h"
+#include "LZ77.h"
+#include "LZ78.h"
+#include "LZW.h"
+#include "ArvHuffman.h"
+#include <ctime>
+#include <time.h>
+
+using namespace std;
+
+
+int main()
+{
+    int tam[6] = {1000, 5000, 10000, 50000, 100000, 500000};
+    string descricao[6] = {"1k.txt", "5k.txt", "10k.txt", "50k.txt", "100k.txt", "500k.txt"};
+    int i = 0; //posição em tam
+    controlaArquivo controleDeArquivo;
+
+    double tempoHuffman = 0;
+    double tempoLZ77 = 0;
+    double tempoLZ78 = 0;
+    double tempoLZW = 0;
+
+    for (i; i<3; i++)
+    {
+        string *vetorQuestoes = controleDeArquivo.vetorDeBodys(tam[i]);
+        string *vetorCompressoes = new string[tam[i]];
+
+        /************
+        * Originais *
+        ************/
+        //Vamos salvar os bodys sem comprimir, para comparar depois
+        string nomeDoArquivo = "originais" + descricao[i];
+        cout << "Imprimindo bodys em " + nomeDoArquivo << endl;
+        controleDeArquivo.imprimeBodys(vetorQuestoes, tam[i], nomeDoArquivo);
+
+        /**********
+        * Huffman *
+        **********/
+        //comprime
+        cout << "Comprimindo com Huffman" << endl;
+
+        ArvHuffman *huffman = new ArvHuffman();
+
+        clock_t fim,start;
+        start = clock();
+        for (int j = 0; j < tam[i]; j++)
+        {
+            vetorCompressoes[j] = huffman->retornaStringComprimida(vetorQuestoes[j]);
+        }
+        fim = clock();
+        tempoHuffman =1000*(fim-start)/(CLOCKS_PER_SEC);
+        delete huffman;
+        //salva em disco
+        nomeDoArquivo = "huffman" + descricao[i];
+        cout << "Imprimindo bodys em " + nomeDoArquivo << endl;
+        controleDeArquivo.imprimeBodys(vetorCompressoes, tam[i], nomeDoArquivo);
+
+
+        /*******
+        * LZ77 *
+        *******/
+        //comprime
+        cout << "Comprimindo com LZ77" << endl;
+
+        LZ77 *lz77 = new LZ77();
+        list<Tripla> lista;
+        start = clock();
+        for (int j = 0; j < tam[i]; j++)
+        {
+            vetorCompressoes[j] = '\n';
+
+            lista = lz77->codifica(vetorQuestoes[j]);
+
+            for (std::list<Tripla>::iterator it = lista.begin() ; it != lista.end(); ++it)
+            {
+
+
+                vetorCompressoes[j]+='<';
+                vetorCompressoes[j]+=to_string(it->jump);
+                vetorCompressoes[j]+=',';
+                vetorCompressoes[j]+=to_string(it->size);
+                vetorCompressoes[j]+=',';
+                vetorCompressoes[j]+=it->c;
+                vetorCompressoes[j]+='>';
+            }
+
+        //cout <<lista.size()<< endl;
+        }
+        fim = clock();
+            tempoLZ77 = 1000*(fim-start)/(CLOCKS_PER_SEC);
+        delete lz77;
+        //salva em disco
+        nomeDoArquivo = "LZ77" + descricao[i];
+        cout << "Imprimindo bodys em " + nomeDoArquivo << endl;
+        controleDeArquivo.imprimeBodys(vetorCompressoes, tam[i], nomeDoArquivo);
+
+        /*******
+        * LZ78 *
+        *******/
+        //comprime
+        cout << "Comprimindo com LZ78" << endl;
+
+
+        LZ78 *lz78 = new LZ78();
+        start = clock();
+        for (int j = 0; j < tam[i]; j++)
+        {
+            vetorCompressoes[j] = lz78->compressao(vetorQuestoes[j]);
+        }
+        fim = clock();
+        tempoLZ78 = 1000*(fim-start)/(CLOCKS_PER_SEC);
+        delete lz78;
+        //salva em disco
+        nomeDoArquivo = "LZ78" + descricao[i];
+        cout << "Imprimindo bodys em " + nomeDoArquivo << endl;
+        controleDeArquivo.imprimeBodys(vetorCompressoes, tam[i], nomeDoArquivo);
+
+        /******
+        * LZW *
+        ******/
+        /*CORRIGIR O BUG DO LOOP INFINITO E DESCOMENTAR AQUI PARA RODAR LZW
+        cout << "Comprimindo com LZW" << endl;
+
+        LZW *lzw = new LZW();
+        vector<int> comprimido;
+        for (int j = 0; j < tam[i]; j++)
+        {
+            start = clock();
+            comprimido = lzw->compressao(vetorQuestoes[j], comprimido);
+             fim = clock();
+             tempoLZW =  1000*(fim-start)/(CLOCKS_PER_SEC);
+            vetorCompressoes[j] = '\n';
+            for (std::vector<int>::iterator k = comprimido.begin() ; k != comprimido.end(); ++k)//itera sobre o vetor de inteiro
+            {
+                //cout << *k << endl;
+                //vetorCompressoes[j] += to_string(k.operator*()) + ", "; // transforma inteiro no indice i em string
+            }
+        }
+        delete lzw;
+        //salva em disco
+        nomeDoArquivo = "LZW" + descricao[i];
+        cout << "Imprimindo bodys em " + nomeDoArquivo << endl;
+        controleDeArquivo.imprimeBodys(vetorCompressoes, tam[i], nomeDoArquivo);
+
+        */
+
+        delete vetorQuestoes;
+        delete vetorCompressoes;
+
+        //imprimir arquivo "saida.txt" com as estatísticas de tempo
+        controleDeArquivo.imprimeSaida("Huffman", tam[i], tempoHuffman);
+        controleDeArquivo.imprimeSaida("LZ77", tam[i], tempoLZ77);
+        controleDeArquivo.imprimeSaida("LZ78", tam[i], tempoLZ78);
+        controleDeArquivo.imprimeSaida("LZW", tam[i], tempoLZW);
+    }
+}
