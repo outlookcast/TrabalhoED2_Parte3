@@ -1,6 +1,7 @@
 #include "ArvHuffman.h"
 #include <iostream>
-
+#include <list>
+#include <iterator>
 
 using  namespace std;
 
@@ -16,12 +17,12 @@ ArvHuffman::~ArvHuffman()
 }
 
 //desaloca memoria da arvore
-void ArvHuffman::desaloca(No * no)
+void ArvHuffman::desaloca(NoHuffman * no)
 {
     if(no!= NULL)
     {
-        No * auxEsq = no->getEsq();
-        No * auxDir = no->getDir();
+        NoHuffman * auxEsq = no->getEsq();
+        NoHuffman * auxDir = no->getDir();
         delete no;
         this->desaloca(auxEsq);
         this->desaloca(auxDir);
@@ -31,28 +32,36 @@ void ArvHuffman::desaloca(No * no)
 void ArvHuffman::montaArvore(vector<Caracter> vetorDeCaracter)
 {
     //Cria heap auxiliar para posicionar os valores
-    priority_queue<No, vector<No*>,comparador> heap;
+    priority_queue<NoHuffman, vector<NoHuffman*>,comparador> heap;
 
     //Armazena os valores
     for (int i = 0; i < vetorDeCaracter.size(); ++i)
-        heap.push(new No(vetorDeCaracter[i].caracter, vetorDeCaracter[i].frequencia));
+    {
+        NoHuffman * novoNo = new NoHuffman();
+        novoNo->setCaracter(vetorDeCaracter[i].caracter);
+        novoNo->setFreq(vetorDeCaracter[i].frequencia);
+        novoNo->setChave(true);
+        heap.push(novoNo);
+    }
 
     //Vai remontando a heap, até restar somente uma árvore dentro da heap
-    while (heap.size() != 1)
+    while (heap.size() > 1)
     {
         //Pega o menor elemento atual
-        No * esq = heap.top();
+        NoHuffman * esq = heap.top();
         heap.pop();
 
         //Pega segundo menor elemento atual
-        No * dir  = heap.top();
+        NoHuffman * dir  = heap.top();
         heap.pop();
 
         /*Cria um nó sem caracter (insere 0, que na tabela ASCII é NULL)para servir como raiz pros dois atuais existentes
          * Seta os filhos e depois insere novamente na heap, até restar somente uma arvore dentro da heap
         */
 
-        No * raizAux = new No(0, esq->getFrequencia() + dir->getFrequencia());
+        NoHuffman * raizAux = new NoHuffman();
+        raizAux->setChave(false);
+        raizAux->setFreq(esq->getFrequencia()+dir->getFrequencia());
         raizAux->setEsq(esq);
         raizAux->setDir(dir);
         heap.push(raizAux);
@@ -64,11 +73,11 @@ void ArvHuffman::montaArvore(vector<Caracter> vetorDeCaracter)
 }
 
 //Cria dicionario para converter string para codigo de huffman
-void ArvHuffman::auxGeraCodigo(No* no, string caminho)
+void ArvHuffman::auxGeraCodigo(NoHuffman* no, string caminho)
 {
     if(no != NULL)
     {
-        if (no->getCaracter() != 0)
+        if (no->eChave())
         {
             Codigo a;
             a.caracter = no->getCaracter();
@@ -147,7 +156,7 @@ string ArvHuffman::descomprime()
     //Verifica se já houve compressao
     if(this->stringComprimida != "")
     {
-        No * p = this->raiz;
+        NoHuffman * p = this->raiz;
         for(int i=0;i<this->stringComprimida.size();i++)
         {
             /*
@@ -160,7 +169,7 @@ string ArvHuffman::descomprime()
             {
                 if(p->getEsq() != NULL)
                     p = p->getEsq();
-                else if(p->getCaracter() != 0 && p->getEsq() == NULL && p->getDir() == NULL)
+                else if(p->eChave() && p->getEsq() == NULL && p->getDir() == NULL)
                 {
                     final += p->getCaracter();
                     p = this->raiz;
@@ -171,7 +180,7 @@ string ArvHuffman::descomprime()
             {
                 if(p->getDir() != NULL)
                     p = p->getDir();
-                else if(p->getCaracter() != 0 && p->getEsq() == NULL && p->getDir() == NULL)
+                else if(p->eChave() && p->getEsq() == NULL && p->getDir() == NULL)
                 {
                     final += p->getCaracter();
                     p = this->raiz;

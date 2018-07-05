@@ -1,6 +1,6 @@
 #ifndef TRABALHOED2_PARTE3_ARVHUFFMAN_H
 #define TRABALHOED2_PARTE3_ARVHUFFMAN_H
-#include "No.h"
+#include "NoHuffman.h"
 #include <bits/stdc++.h>
 #include <list>
 
@@ -23,7 +23,7 @@ struct Caracter
 //Usado para poder comparar dois objetos usando uma propiedade dele
 struct comparador
 {
-    bool operator()(No* esq, No* dir)
+    bool operator()(NoHuffman* esq, NoHuffman* dir)
     {
         return (esq->getFrequencia() > dir->getFrequencia());
     }
@@ -35,12 +35,12 @@ private:
 
     string stringOriginal;
     list<Codigo> listaDeCodigos;
-    No * raiz;
+    NoHuffman * raiz;
     string stringComprimida;
 
-    void desaloca(No * no);
+    void desaloca(NoHuffman * no);
     void montaArvore(vector<Caracter> vetorDeCaracter);
-    void auxGeraCodigo(No* no, string caminho);
+    void auxGeraCodigo(NoHuffman* no, string caminho);
     void calculaFrequencia(string frase);
 
 public:
